@@ -1,4 +1,3 @@
-import './styles/layout.css';
 import { Sidebar, Viewer } from './components';
 import { createContext, useState } from 'react';
 import { IData, Repo } from './models';
