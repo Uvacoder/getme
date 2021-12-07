@@ -1,13 +1,15 @@
 import './styles/layout.css';
+import Sidebar from './components/Sidebar';
+import Viewer from './components/Viewer';
 
 export default function App() {
   return (
     <div className="layout">
       <div className="sidebar">
-        dsafsdafas
+        <Sidebar />
       </div>
       <div className="viewer">
-        asdfasdf
+        <Viewer />
       </div>
     </div>
   );
