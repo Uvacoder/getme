@@ -1,0 +1,11 @@
+.sidebar 
+{
+    overflow: hidden;
+    position: relative;
+}
+.header 
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}

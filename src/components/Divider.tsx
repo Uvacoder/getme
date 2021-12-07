@@ -1,10 +1,8 @@
-
+import '../styles/divider.css';
 
 const Divider = () => {
     return (
-        <div>
-            divider
-        </div>
+        <hr />
     );
 };
 

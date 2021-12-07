@@ -1,10 +1,10 @@
+import '../styles/logo.css';
 
+const LOGO: string = "Getme.";
 
 const Logo = () => {
     return (
-        <div>
-            logo
-        </div>
+        <div className="logo">{ LOGO }</div>
     );
 };
 
