@@ -4,6 +4,11 @@
     flex-direction: row;
 }
 
+.sidebar, .viewer 
+{
+    padding: 2rem;
+}
+
 .sidebar 
 {
     flex: 1.7;
