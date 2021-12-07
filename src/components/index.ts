@@ -7,6 +7,7 @@ import SearchBox from "./SearchBox";
 import Sidebar from "./Sidebar";
 import Viewer from "./Viewer";
 import Wordmark from "./Wordmark";
+import Version from "./Version";
 
 export {
     Button,
@@ -18,4 +19,5 @@ export {
     Sidebar,
     Viewer,
     Wordmark,
+    Version,
 };

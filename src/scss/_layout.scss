@@ -1,6 +1,6 @@
 .app
 {
-    height: 100vh;
+    height: calc(100vh - 50px);
     width: 100%;
     display: flex;
     justify-content: center;
@@ -10,7 +10,7 @@
 
 .sidebar 
 {
-    height: 100vh;
+    height: calc(100vh - 70px);
     flex: 2;
     background-color: $white;
     padding: $padding;
@@ -25,7 +25,7 @@
 
 .viewer
 {
-    height: 100vh;
+    height: calc(100vh - 50px);
     flex: 3;
     background-color: $accent2;
     overflow-y: scroll;
@@ -37,4 +37,41 @@ hr
     border: none;
     border-top: 2px solid $accent2;
     margin-bottom: $margin;
+}
+
+.version
+{
+    height: 50px;
+    width: 100%;
+    background-image: linear-gradient(to right, rgba($primary, 0.6), rgba($primary, 1.0));
+    color: $white;
+    text-align: center;
+    padding: $padding;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.version > span 
+{
+    display: block;
+}
+
+
+.version > .brand 
+{
+    font-weight: $extra-bold;
+    letter-spacing: -0.8px;
+}
+
+.version > .sep 
+{
+    margin: 0 $margin;
+    color: $primary;
+    font-weight: $bold;
+}
+
+.version > .desc, .version > .vversion 
+{
+    font-size: 0.8rem;
 }

@@ -1,4 +1,4 @@
-import { Sidebar, Viewer } from './components';
+import { Sidebar, Version, Viewer } from './components';
 import { createContext, useState } from 'react';
 import { IData, Repo } from './models';
 import { fetchRepoReadme, fetchRepos } from './services/github';
@@ -41,6 +41,7 @@ const App = (): JSX.Element => {
 
   return (
     <DataContext.Provider value={ _defaultData }>
+      <Version />
       <div className="app">
         <Sidebar />
         <Viewer />

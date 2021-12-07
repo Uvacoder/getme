@@ -1,4 +1,4 @@
-import Project from '../globals/Project';
+import Project from '../models/Project';
 
 /**
  * 
