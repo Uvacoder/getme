@@ -1,16 +1,32 @@
 import '../styles/resultitem.css';
 
-const ResultItem = () => {
+
+interface Owner {
+    login: string
+    avatar_url: string,
+};
+
+interface Repo {
+    name: string,
+    description: string,
+    owner: Owner,
+};
+
+interface ResultItemProp {
+    repo: Repo,  
+};
+
+const ResultItem = ({ repo }: ResultItemProp) => {
     return (
         <div className="resultitem">
             <div className="active"></div>
             <div className="resultavatar">
-                <div className="avatar"></div>
+                <img src={ repo.owner.avatar_url } alt="" className="avatar" />
             </div>
             <div className="resultcontent">
-                <p className="username">vrfdivino</p>
-                <p className="reponame">vrfdivino.github.io</p>
-                <p className="repodesc">My portfolio website</p>
+                <p className="username">{ repo.owner.login }</p>
+                <p className="reponame">{ repo.name }</p>
+                <p className="repodesc">{ repo.description }</p>
             </div>
         </div>
     );

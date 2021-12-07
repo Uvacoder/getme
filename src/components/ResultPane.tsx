@@ -1,23 +1,30 @@
 import ResultItem from "./ResultItem";
 import '../styles/resultpane.css';
 
-const getResultLists = (): object[] => {
+interface Owner {
+    login: string
+    avatar_url: string,
+};
 
-    let lists: object[] = [];
-
-    for (let i = 0; i < 20; ++i) {
-        lists.push(<ResultItem />);
-    };
-
-
-    return lists;
+interface Repo {
+    name: string,
+    description: string,
+    owner: Owner
 };
 
 
-const ResultPane = () => {
+interface ResultPaneProps {
+   repos: Repo[],
+};
+
+
+const ResultPane = ({ repos }: ResultPaneProps) => {
+
+    console.log(repos);
+
     return (
         <div className="resultpane">
-            { getResultLists() }
+            { repos.map((repo, idx)=> <ResultItem key={ idx } repo={ repo }/>)}
         </div>
     );
 };
