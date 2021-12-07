@@ -41,7 +41,7 @@ const App = (): JSX.Element => {
 
   return (
     <DataContext.Provider value={ _defaultData }>
-      <div className="layout">
+      <div className="app">
         <Sidebar />
         <Viewer />
       </div>
