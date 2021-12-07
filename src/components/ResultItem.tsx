@@ -22,7 +22,7 @@ const ResultItem = ({ repo }: ResultItemProp) => {
 
     useEffect(() => {
         const init = async () => {
-            fetchReadme(repo.owner.login, repo.name);
+            console.log(await fetchReadme(repo.owner.login, repo.name));
         };
 
         init();
