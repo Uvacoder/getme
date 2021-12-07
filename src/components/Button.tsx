@@ -1,4 +1,5 @@
 import Project from '../globals/Project';
+import { ButtonProps } from '../models';
 import '../styles/button.css'
 
 /**
@@ -8,9 +9,9 @@ import '../styles/button.css'
  * @returns 
  * 
  */
-const Button = (): JSX.Element => {
+const Button = ({ pushReadme }: ButtonProps ): JSX.Element => {
 
-    return <button className="button">{ Project.APP_NAME }</button>;
+    return <button onClick={ () => pushReadme() } className="button">{ Project.APP_NAME }</button>;
     
 };
 

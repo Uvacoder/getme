@@ -1,22 +1,23 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { fetchRepoReadme } from '../services/github';
 import ReactMarkdown from 'react-markdown';
 import '../styles/viewer.css';
 import '../styles/markdown.default.css';
+import { DataContext } from '../context';
 
 const Viewer = (): JSX.Element => {
 
-    const [readme, setReadme] = useState<string>("");
+    const { data, actions } = useContext(DataContext);
 
     useEffect(() => {
         (async () => {
-            setReadme(await fetchRepoReadme("Microsoft", "Typescript"));
+            actions.setReadme(await actions.fetchRepoReadme(data.username, data.reponame));
         })();
-    }, []);
+    }, [data.reponame]);
 
     return (
         <div className="viewer">
-            <ReactMarkdown children={readme} skipHtml={ true }/>
+            <ReactMarkdown children={ data.readme } skipHtml={ true }/>
         </div>
     );
 

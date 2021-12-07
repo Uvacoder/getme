@@ -1,7 +1,8 @@
-import { useEffect } from 'react';
+import { useContext, useEffect } from 'react';
 import { fetchRepoReadme } from '../services/github';
 import { ResultItemProps } from '../models';
 import '../styles/resultitem.css';
+import { DataContext } from '../context';
 
 /**
  * 
@@ -12,16 +13,15 @@ import '../styles/resultitem.css';
  */
 const ResultItem = ({ repo }: ResultItemProps): JSX.Element => {
 
-    useEffect(() => {
+    let { data, actions } = useContext(DataContext);
 
-        (async () => {
-            await fetchRepoReadme(repo.owner.login, repo.name);
-        })();
+    const pushReadme = () => {
+        actions.setReponame(repo.name);
+    };
 
-    }, []);
 
     return (
-        <div className="resultitem">
+        <div className="resultitem" onClick={ () => pushReadme() }>
             <div className="active"></div>
             <div className="resultavatar">
                 <img src={ repo.owner.avatar_url } alt="" className="avatar" />

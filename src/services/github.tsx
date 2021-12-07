@@ -23,9 +23,17 @@ const octokit = new Octokit({ auth: process.env.REACT_APP_GITHUB_ACCESS_TOKEN })
  */
 const fetchRepos = async (username: string): Promise<Repo[]> => {
 
-    const response: any = await octokit.rest.repos.listForUser({ username });
-    return reposSerializer(response.data);
+    let response: any;
 
+    console.log(username);
+
+    if (username) {
+        response =  await octokit.rest.repos.listForUser({ username });
+        return reposSerializer(response.data);
+    }
+
+    response = await octokit.rest.repos.listPublic();
+    return reposSerializer(response.data).slice(0,10);
 };
 
 /**
@@ -38,8 +46,12 @@ const fetchRepos = async (username: string): Promise<Repo[]> => {
  */
 const fetchRepoReadme = async (username: string, reponame: string): Promise<string> => {
 
-    const readme: string = await fetchReadme({ username: username, repository: reponame });
-    return readme;
+    try {
+        const readme: string = await fetchReadme({ username: username, repository: reponame });
+        return readme;
+    } catch (e) {
+        return "";
+    }
     
 };
 

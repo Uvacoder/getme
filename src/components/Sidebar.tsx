@@ -17,27 +17,14 @@ import { Repo } from "../models";
  */
 const Sidebar = (): JSX.Element => {
 
-    const [repos, setRepos] = useState<Repo[]>([]);
-   
-    useEffect(() => {
-
-        (async() => {
-            setRepos(await fetchRepos("cs50"));   
-        })();
-        
-    }, []);
-
     return (
         <div className="sidebar">
             <div className="header">
                 <Logo />
-                <div>
-                    <SearchBox />
-                    <Button />
-                </div>
+                <SearchBox />
             </div>
             <Divider />
-            <ResultPane repos={ repos } />
+            <ResultPane />
         </div>
     );
 

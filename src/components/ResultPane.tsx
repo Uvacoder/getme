@@ -1,6 +1,8 @@
 import ResultItem from "./ResultItem";
 import '../styles/resultpane.css';
-import { ResultPaneProps } from "../models";
+import { Repo, ResultPaneProps } from "../models";
+import { useContext, useEffect, useState } from "react";
+import { DataContext } from "../context";
 
 /**
  * 
@@ -10,11 +12,27 @@ import { ResultPaneProps } from "../models";
  * @returns 
  * 
  */
-const ResultPane = ({ repos }: ResultPaneProps): JSX.Element => {
+const ResultPane = (): JSX.Element => {
 
+    const { data, actions } = useContext(DataContext);
+    const [loading, setLoading] = useState<boolean>(true);
+
+    useEffect(() => {
+        (async () => {
+            actions.setRepos(await actions.fetchRepos(data.username));
+        })();
+
+        if (data.username != null) {
+            setLoading(false);
+        }
+    }, [data.username]);
+
+    if (loading) {
+        return <h1>loading...</h1>
+    }
     return (
         <div className="resultpane">
-            { repos.map((repo, idx)=> <ResultItem key={ idx } repo={ repo }/>)}
+            { data.repos.map((repo, idx) => <ResultItem key={ idx } repo={ repo } />)}
         </div>
     );
     
