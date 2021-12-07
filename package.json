@@ -40,5 +40,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@varandas/fetch-readme": "^1.0.9",
+    "react-markdown": "^7.1.1"
   }
 }

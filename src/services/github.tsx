@@ -1,5 +1,17 @@
 import { Repo } from "../models";
 import { reposSerializer } from "../serializers";
+import { Octokit } from "octokit";
+import { fetchReadme } from '@varandas/fetch-readme';
+
+const octokit = new Octokit({ auth: process.env.REACT_APP_GITHUB_ACCESS_TOKEN });
+
+// const loginGithub = async () => {
+//     const {
+//         data: { login },
+//       } = await octokit.rest.users.getAuthenticated();
+//       console.log("Hello, %s", login);
+// };
+
 
 /**
  * 
@@ -11,9 +23,8 @@ import { reposSerializer } from "../serializers";
  */
 const fetchRepos = async (username: string): Promise<Repo[]> => {
 
-    const response = await fetch(`https://api.github.com/users/${ username }/repos`);
-    const json = await response.json();
-    return reposSerializer(json);
+    const response: any = await octokit.rest.repos.listForUser({ username });
+    return reposSerializer(response.data);
 
 };
 
@@ -25,13 +36,12 @@ const fetchRepos = async (username: string): Promise<Repo[]> => {
  * @param reponame 
  * @returns 
  */
-const fetchReadme = async (username: string, reponame: string) => {
+const fetchRepoReadme = async (username: string, reponame: string): Promise<string> => {
 
-    const response = await fetch(`https://api.github.com/repos/${ username }/${ reponame }/readme`);
-    const json = await response.json();
-
-    return json.content;
+    const readme: string = await fetchReadme({ username: username, repository: reponame });
+    return readme;
+    
 };
 
 
-export { fetchRepos , fetchReadme };
+export { fetchRepos , fetchRepoReadme };

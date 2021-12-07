@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { fetchReadme } from '../services/github';
+import { fetchRepoReadme } from '../services/github';
 import { ResultItemProps } from '../models';
 import '../styles/resultitem.css';
 
@@ -15,7 +15,7 @@ const ResultItem = ({ repo }: ResultItemProps): JSX.Element => {
     useEffect(() => {
 
         (async () => {
-            await fetchReadme(repo.owner.login, repo.name);
+            await fetchRepoReadme(repo.owner.login, repo.name);
         })();
 
     }, []);
