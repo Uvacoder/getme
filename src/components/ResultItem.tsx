@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+import { fetchReadme } from '../services/github';
 import '../styles/resultitem.css';
 
 
@@ -17,6 +19,15 @@ interface ResultItemProp {
 };
 
 const ResultItem = ({ repo }: ResultItemProp) => {
+
+    useEffect(() => {
+        const init = async () => {
+            fetchReadme(repo.owner.login, repo.name);
+        };
+
+        init();
+    }, []);
+
     return (
         <div className="resultitem">
             <div className="active"></div>
