@@ -1,0 +1,22 @@
+.logo
+{
+    font-size: 2rem;
+    color: $primary;
+    font-weight: 800;
+    letter-spacing: -2px;
+}
+
+.wordmark
+{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.wordmark > span 
+{
+    display: block;
+}

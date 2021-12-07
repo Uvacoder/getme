@@ -1,5 +1,4 @@
 import Project from '../globals/Project';
-import '../styles/logo.css';
 
 /**
  * 
@@ -10,7 +9,7 @@ import '../styles/logo.css';
  */
 const Logo = (): JSX.Element => {
 
-    return <div className="logo">{ Project.APP_NAME }.</div>;
+    return <div className="logo">{ Project.APP_NAME.split(" ").join("") }.</div>;
     
 };
 

@@ -1,8 +1,8 @@
 import ResultItem from "./ResultItem";
-import '../styles/resultpane.css';
 import { Repo, ResultPaneProps } from "../models";
 import { useContext, useEffect, useState } from "react";
 import { DataContext } from "../context";
+import { Wordmark } from ".";
 
 /**
  * 
@@ -28,10 +28,10 @@ const ResultPane = (): JSX.Element => {
     }, [data.username]);
 
     if (loading) {
-        return <h1>loading...</h1>
+        return <Wordmark text="Please wait..." />
     }
     return (
-        <div className="resultpane">
+        <div className="pane">
             { data.repos.map((repo, idx) => <ResultItem key={ idx } repo={ repo } />)}
         </div>
     );

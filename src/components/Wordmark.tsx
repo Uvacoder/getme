@@ -1,11 +1,15 @@
 import Logo from "./Logo";
 
-const Wordmark = (): JSX.Element => {
+interface WordmarkProps {
+    text: string,
+}
+
+const Wordmark = ({ text }: WordmarkProps): JSX.Element => {
 
     return (
-        <div>
+        <div className="wordmark">
             <Logo />
-            sdafasdf
+            <span>{ text }</span>
         </div>
     );
     
