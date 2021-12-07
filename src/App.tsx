@@ -1,11 +1,14 @@
+import './styles/layout.css';
 
-
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      hello
+    <div className="layout">
+      <div className="sidebar">
+        dsafsdafas
+      </div>
+      <div className="viewer">
+        asdfasdf
+      </div>
     </div>
   );
-}
-
-export default App;
+};

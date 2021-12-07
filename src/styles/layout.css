@@ -1,0 +1,19 @@
+.layout
+{
+    display: flex;
+    flex-direction: row;
+}
+
+.sidebar 
+{
+    flex: 1.7;
+    height: 100vh;
+    background-color: var(--white);
+}
+
+.viewer 
+{
+    flex: 2.4;
+    height: 100vh;
+    background-color: var(--light-grey);
+}
