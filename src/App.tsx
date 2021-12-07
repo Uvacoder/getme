@@ -1,16 +1,21 @@
 import './styles/layout.css';
-import Sidebar from './components/Sidebar';
-import Viewer from './components/Viewer';
+import { Sidebar, Viewer } from './components';
 
-export default function App() {
+/**
+ * 
+ * The App component.
+ * 
+ * @returns 
+ */
+const App = (): JSX.Element => {
+
   return (
     <div className="layout">
-      <div className="sidebar">
-        <Sidebar />
-      </div>
-      <div className="viewer">
-        <Viewer />
-      </div>
+      <Sidebar />
+      <Viewer />
     </div>
   );
+
 };
+
+export default App;

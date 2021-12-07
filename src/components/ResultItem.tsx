@@ -3,15 +3,21 @@ import { fetchReadme } from '../services/github';
 import { ResultItemProps } from '../models';
 import '../styles/resultitem.css';
 
-
-const ResultItem = ({ repo }: ResultItemProps) => {
+/**
+ * 
+ * The ResultItem component.
+ * 
+ * @param props  
+ * @returns 
+ */
+const ResultItem = ({ repo }: ResultItemProps): JSX.Element => {
 
     useEffect(() => {
-        const init = async () => {
-            console.log(await fetchReadme(repo.owner.login, repo.name));
-        };
 
-        init();
+        (async () => {
+            await fetchReadme(repo.owner.login, repo.name);
+        })();
+
     }, []);
 
     return (
@@ -27,6 +33,7 @@ const ResultItem = ({ repo }: ResultItemProps) => {
             </div>
         </div>
     );
+
 };
 
 export default ResultItem;

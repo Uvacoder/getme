@@ -1,16 +1,24 @@
+import { SearchBoxConfig } from '../models';
 import '../styles/searchbox.css';
 
-const searchBoxConfig: object = {
-    className: "searchbox",
-    type: "text",
-    required: true,
+let searchBoxConfig: SearchBoxConfig = {
+    className:   "searchbox",
+    type:        "text",
+    required:    true,
     placeholder: "Search for username",
 };
 
-const SearchBox = () => {
-    return (
-        <input { ...searchBoxConfig } />
-    );
+/**
+ * 
+ * The SearhBox component.
+ * 
+ * @returns 
+ * 
+ */
+const SearchBox = (): JSX.Element => {
+
+    return <input { ...searchBoxConfig } />;
+    
 };
 
 export default SearchBox;

@@ -1,13 +1,14 @@
 import Logo from "./Logo";
 
+const Wordmark = (): JSX.Element => {
 
-const Wordmark = () => {
     return (
         <div>
             <Logo />
             sdafasdf
         </div>
     );
+    
 };
 
 export default Wordmark;

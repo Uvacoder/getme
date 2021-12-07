@@ -1,11 +1,11 @@
+const Viewer = (): JSX.Element => {
 
-
-const Viewer = () => {
     return (
-        <div>
+        <div className="viewer">
             Vierwer
         </div>
     );
+
 };
 
 export default Viewer;

@@ -7,22 +7,28 @@ import ResultPane from "./ResultPane";
 
 import { fetchRepos } from "../services/github";
 import { useEffect, useState } from "react";
+import { Repo } from "../models";
 
+/**
+ * 
+ * Sidebar component for searching and displaying results.
+ * 
+ * @returns 
+ */
+const Sidebar = (): JSX.Element => {
 
-const Sidebar = () => {
-
-    const [repos, setRepos] = useState([]);
+    const [repos, setRepos] = useState<Repo[]>([]);
    
     useEffect(() => {
-        const init = async () =>  {
-            setRepos(await fetchRepos("cs50"));            
-        };
 
-        init();
+        (async() => {
+            setRepos(await fetchRepos("cs50"));   
+        })();
+        
     }, []);
 
     return (
-        <div>
+        <div className="sidebar">
             <div className="header">
                 <Logo />
                 <div>
@@ -34,6 +40,7 @@ const Sidebar = () => {
             <ResultPane repos={ repos } />
         </div>
     );
+
 };
 
 export default Sidebar;

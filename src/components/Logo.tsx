@@ -1,11 +1,17 @@
+import Project from '../globals/Project';
 import '../styles/logo.css';
 
-const LOGO: string = "Getme.";
+/**
+ * 
+ * The Logo component.
+ * 
+ * @returns 
+ * 
+ */
+const Logo = (): JSX.Element => {
 
-const Logo = () => {
-    return (
-        <div className="logo">{ LOGO }</div>
-    );
+    return <div className="logo">{ Project.APP_NAME }.</div>;
+    
 };
 
 export default Logo;

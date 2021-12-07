@@ -1,9 +1,16 @@
 import '../styles/divider.css';
 
-const Divider = () => {
-    return (
-        <hr />
-    );
+/**
+ * 
+ * The Divider component.
+ * 
+ * @returns 
+ * 
+ */
+const Divider = (): JSX.Element => {
+
+    return <hr />;
+    
 };
 
 export default Divider;
