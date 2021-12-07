@@ -2,7 +2,6 @@ import { useContext, useRef } from 'react';
 import { Button } from '.';
 import { DataContext } from '../context';
 import { SearchBoxConfig } from '../models';
-import '../styles/searchbox.css';
 
 let searchBoxConfig: SearchBoxConfig = {
     className:   "searchbox",

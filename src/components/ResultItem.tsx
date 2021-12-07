@@ -1,7 +1,6 @@
 import { useContext, useEffect } from 'react';
 import { fetchRepoReadme } from '../services/github';
 import { ResultItemProps } from '../models';
-import '../styles/resultitem.css';
 import { DataContext } from '../context';
 
 /**
@@ -21,12 +20,12 @@ const ResultItem = ({ repo }: ResultItemProps): JSX.Element => {
 
 
     return (
-        <div className="resultitem" onClick={ () => pushReadme() }>
+        <div className="item" onClick={ () => pushReadme() }>
             <div className="active"></div>
-            <div className="resultavatar">
+            <div className="item-avatar">
                 <img src={ repo.owner.avatar_url } alt="" className="avatar" />
             </div>
-            <div className="resultcontent">
+            <div className="item-content">
                 <p className="username">{ repo.owner.login }</p>
                 <p className="reponame">{ repo.name }</p>
                 <p className="repodesc">{ repo.description }</p>

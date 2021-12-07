@@ -1,0 +1,246 @@
+@import url("https://fonts.googleapis.com/css2?family=Sen:wght@400;700;800&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+  font-size: 14px;
+  font-family: "Sen", sans-serif;
+}
+
+a {
+  color: #4183c4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+ul, ol {
+  padding-left: 30px;
+}
+
+h1 {
+  border-bottom: 1px solid #ddd;
+  color: #000;
+  font-size: 2.5em;
+}
+
+h2 {
+  border-bottom: 1px solid #eee;
+  color: #000;
+  font-size: 2em;
+}
+
+h3 {
+  font-size: 1.5em;
+}
+
+h4 {
+  font-size: 1.2em;
+}
+
+h5 {
+  font-size: 1em;
+}
+
+h6 {
+  color: #777;
+  font-size: 1em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  line-height: 1.7;
+  margin: 1em 0 15px 0;
+}
+
+h1 + p, h2 + p, h3 + p {
+  margin-top: 10px;
+}
+
+code {
+  background-color: #F8F8F8;
+  border-radius: 3px;
+  border: 1px solid #DDD;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+  font-size: 12px;
+  margin: 0 2px;
+  padding: 0 5px;
+  white-space: pre;
+}
+
+.app {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.sidebar {
+  height: 100vh;
+  flex: 2;
+  background-color: #fff;
+  padding: 1rem;
+}
+
+.sidebar > .header {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 1rem;
+}
+
+.viewer {
+  height: 100vh;
+  flex: 3;
+  background-color: #F2F3F7;
+  overflow-y: scroll;
+  padding: 4rem;
+}
+
+hr {
+  border: none;
+  border-top: 2px solid #F2F3F7;
+  margin-bottom: 1rem;
+}
+
+.pane {
+  overflow-y: scroll;
+  height: calc(100vh - 7rem);
+  padding: 1rem;
+}
+
+.pane {
+  -ms-overflow-style: none;
+  /* Internet Explorer 10+ */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+.pane::-webkit-scrollbar {
+  display: none;
+  /* Safari and Chrome */
+}
+
+.item {
+  min-height: 100px;
+  width: 100%;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.item:hover {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+}
+
+.item-avatar {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.item-content {
+  flex: 2;
+  height: 100%;
+  padding: 1rem;
+}
+
+.avatar {
+  display: block;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+}
+
+.username {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #96A0A6;
+  margin-bottom: -0.8rem;
+}
+
+.reponame {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #505964;
+}
+
+.repodesc {
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: #96A0A6;
+  margin-top: -1rem;
+}
+
+.logo {
+  font-size: 2rem;
+  color: #5A44E1;
+  font-weight: 800;
+  letter-spacing: -2px;
+}
+
+.wordmark {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.wordmark > span {
+  display: block;
+}
+
+button {
+  padding: 1rem;
+  border: none;
+  border-radius: 0.4rem;
+  background-color: #5A44E1;
+  color: #fff;
+  font-weight: 400;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  letter-spacing: 2px;
+}
+
+input[type=text] {
+  padding: 1rem;
+  background-color: #F2F3F7;
+  color: #96A0A6;
+  border-radius: 0.4rem;
+  font-family: "Sen", sans-serif;
+  font-size: 0.8rem;
+  color: #505964;
+  font-weight: 700;
+  margin-right: 1rem;
+  border: none;
+  outline: none;
+  transition: 0.3s;
+}
+
+input[type=text]::placeholder {
+  color: #96A0A6;
+}
+
+/*# sourceMappingURL=styles.css.map */

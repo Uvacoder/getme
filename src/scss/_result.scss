@@ -1,0 +1,79 @@
+.pane
+{
+    overflow-y: scroll;
+    height: calc(100vh - 7rem);
+    padding: $padding;
+}
+
+.pane {
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+}
+.pane::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
+}
+
+.item 
+{
+    min-height: 100px;
+    width: 100%;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: $margin;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.item:hover
+{
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+}
+
+.item-avatar
+{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // background: tomato;
+}
+
+.item-content
+{
+    flex: 2;
+    height: 100%;
+    // background: dodgerblue;
+    padding: $padding;
+}
+
+.avatar 
+{
+    display: block;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+}
+
+.username
+{
+    font-size: 1rem;
+    font-weight: $normal;
+    color: $accent1;
+    margin-bottom: -0.8rem;
+}
+
+.reponame
+{
+    font-size: 1.2rem;
+    font-weight: $bold;
+    color: $black;
+}
+
+.repodesc 
+{
+    font-size: 0.8rem;
+    font-weight: $normal;
+    color: $accent1;
+    margin-top: -$margin;
+}
