@@ -106,7 +106,7 @@ code {
   flex: 3;
   background-color: #F2F3F7;
   overflow-y: scroll;
-  padding: 4rem;
+  padding: calc($padding * 4);
 }
 
 hr {

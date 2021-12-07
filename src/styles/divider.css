@@ -1,8 +1,0 @@
-hr 
-{
-    width: 100%;
-    border: 0 none;
-    border-top: 2px solid var(--light-grey);
-    margin-top: 2rem;
-    border-radius: var(--border-radius);
-}
