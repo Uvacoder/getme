@@ -22,17 +22,19 @@ const ResultPane = (): JSX.Element => {
             actions.setRepos(await actions.fetchRepos(data.username));
         })();
 
-        if (data.username != null) {
-            setLoading(false);
-        }
+        if (data.username !== null) setLoading(false);
+
     }, [data.username]);
 
-    if (loading) {
-        return <Wordmark text="Please wait..." />
-    }
     return (
         <div className="pane">
-            { data.repos.map((repo, idx) => <ResultItem key={ idx } repo={ repo } />)}
+            { 
+                loading ?
+                <Wordmark text="Please wait..." /> :
+                !loading && data.repos.length == 0 ?
+                <Wordmark text={`No repos found for ${ data.username }.`} /> :
+                data.repos.map((repo, idx) => <ResultItem key={ idx } repo={ repo } />)
+            }
         </div>
     );
     
