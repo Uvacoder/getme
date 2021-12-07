@@ -1,24 +1,10 @@
 import { useEffect } from 'react';
 import { fetchReadme } from '../services/github';
+import { ResultItemProps } from '../models';
 import '../styles/resultitem.css';
 
 
-interface Owner {
-    login: string
-    avatar_url: string,
-};
-
-interface Repo {
-    name: string,
-    description: string,
-    owner: Owner,
-};
-
-interface ResultItemProp {
-    repo: Repo,  
-};
-
-const ResultItem = ({ repo }: ResultItemProp) => {
+const ResultItem = ({ repo }: ResultItemProps) => {
 
     useEffect(() => {
         const init = async () => {
