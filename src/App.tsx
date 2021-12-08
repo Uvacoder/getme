@@ -1,8 +1,9 @@
 import { Sidebar, Version, Viewer } from './components';
-import { createContext, useState } from 'react';
+import { createContext, useEffect, useState } from 'react';
 import { IData, Repo } from './models';
 import { fetchRepoReadme, fetchRepos } from './services/github';
 import { DataContext, defaultData } from './context';
+import SplashScreen from './components/SplashScreen';
 
 
 /**
@@ -17,6 +18,13 @@ const App = (): JSX.Element => {
   const [reponame, setReponame] = useState<string>("");
   const [readme, setReadme] = useState<string>("");
   const [repos, setRepos] = useState<Repo[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 5000);
+  });
 
   let data = {
     username,
@@ -39,6 +47,8 @@ const App = (): JSX.Element => {
     actions,
   };
 
+  if (loading) return <SplashScreen />;
+
   return (
     <DataContext.Provider value={ _defaultData }>
       <Version />
@@ -52,4 +62,3 @@ const App = (): JSX.Element => {
 };
 
 export default App;
-export { DataContext };
