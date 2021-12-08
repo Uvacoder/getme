@@ -3,6 +3,7 @@ import { fetchRepoReadme } from '../services/github';
 import ReactMarkdown from 'react-markdown';
 import { DataContext } from '../context';
 import { Wordmark } from '.';
+import Project from '../models/Project';
 
 const Viewer = (): JSX.Element => {
 
@@ -22,7 +23,7 @@ const Viewer = (): JSX.Element => {
                 data.readme !== "" ?
                 <ReactMarkdown children={ data.readme } skipHtml={ true }/> :
                 init == 1 ?
-                <Wordmark text="Easy access GitHub ." /> :
+                <Wordmark text={ Project.APP_DESCRIPTION } /> :
                 <Wordmark text={`No README.md available for repo ${ data.reponame }.`} /> 
             }
         </div>
