@@ -1,46 +1,45 @@
-# Getting Started with Create React App
+# [Getme](http://getme-test.herokuapp.com)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+___
 
-## Available Scripts
+###### A web application to search GitHub projects. Vist [http://getme-test.herokuapp.com](http://getme-test.herokuapp.com)!
 
-In the project directory, you can run:
+![Getme screenshot](./public/screenshot.png "Getme Web App")
 
-### `yarn start`
+## How it works?
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+___
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+1. The user will enter a GitHub username.
+2. Upon searching, the web app will search all the repos created by the GitHub user.
+3. You can view the README of a repo when available.
 
-### `yarn test`
+## Architecture
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+___
 
-### `yarn build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. React was used to develop user interfaces and the frontend.
+2. SCSS was used to develop the stylesheets of every UI and converge into one.
+3. GitHUB RESTful API via Octokit was used to fetch GitHub-related data.
+4. Extensions such as `@varandas/fetch-readme`, `react-markdown`, and `react-spinner` were used to develope other interfaces.
+5. TypeScript was used as an extension with JS to minimize production bugs.
+6. Heroku was used to deploy the production app.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Run on your local machine
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+___
 
-### `yarn eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+1. Clone this project by typing `git clone https://github.com/vrfdivino/getme.git`.
+2. Make sure you have `node` and `npm` installed in your machine.
+3. Install dependencies by typing `npm install`.
+4. Create a `.env.local` file. Put a `REACT_APP_GITHUB_ACCESS_TOKEN` variable. You can generate a token by visiting this [link](https://docs.github.com/en/authentication/keeping-your…).
+5. Once you completed the steps above, run the app by typing `npm start`.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## About the creator
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+___
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Hi! I am [Von Divino](https://github.com/vrfdivino), a software developer based in the Philippines focusing on Human-Computer Interaction and Computer Architecture.
