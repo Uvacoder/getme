@@ -1,7 +1,5 @@
 import Repo from "./Repo";
 
-interface ResultPaneProps {
-    repos: Repo[],
- };
+interface ResultPaneProps { repos: Repo[], };
 
- export default ResultPaneProps;
+export default ResultPaneProps;

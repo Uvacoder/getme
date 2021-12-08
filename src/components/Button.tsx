@@ -1,16 +1,18 @@
-import Project from '../models/Project';
+import { Project } from '../models';
 import { ButtonProps } from '../models';
 
 /**
  * 
- * The Button component.
+ * The Button component in-charge of searching for GitHub users.
  * 
  * @returns 
  * 
  */
-const Button = ({ pushReadme }: ButtonProps ): JSX.Element => {
+const Button = ({ pushRepos }: ButtonProps ): JSX.Element => {
 
-    return <button onClick={ () => pushReadme() }>{ Project.APP_NAME }</button>;
+    return <button onClick={ () => pushRepos() }>
+        { Project.APP_NAME }
+    </button>;
     
 };
 

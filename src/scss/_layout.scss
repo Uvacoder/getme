@@ -57,11 +57,13 @@ hr
     display: block;
 }
 
-
 .version > .brand 
 {
     font-weight: $extra-bold;
     letter-spacing: -0.8px;
+    cursor: pointer;
+    text-decoration: underline;
+    color: white;
 }
 
 .version > .sep 

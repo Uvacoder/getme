@@ -1,16 +1,10 @@
-
-
 /**
  * 
- * The Divider component.
+ * A simple divider component.
  * 
  * @returns 
  * 
  */
-const Divider = (): JSX.Element => {
-
-    return <hr />;
-    
-};
+const Divider = (): JSX.Element => <hr />;
 
 export default Divider;

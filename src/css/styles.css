@@ -134,6 +134,9 @@ hr {
 .version > .brand {
   font-weight: 800;
   letter-spacing: -0.8px;
+  cursor: pointer;
+  text-decoration: underline;
+  color: white;
 }
 
 .version > .sep {

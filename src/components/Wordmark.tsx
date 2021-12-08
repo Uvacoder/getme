@@ -1,9 +1,14 @@
+import { WordmarkProps } from "../models";
 import Logo from "./Logo";
 
-interface WordmarkProps {
-    text: string,
-}
-
+/**
+ * 
+ * The Wordmark component.
+ * 
+ * @param text The subtitle of the wordmark.
+ * @returns 
+ * 
+ */
 const Wordmark = ({ text }: WordmarkProps): JSX.Element => {
 
     return (

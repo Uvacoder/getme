@@ -1,5 +1,3 @@
-interface ButtonProps {
-    pushReadme: Function,
-}
+interface ButtonProps { pushRepos: Function, };
 
 export default ButtonProps;

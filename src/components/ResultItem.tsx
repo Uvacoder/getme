@@ -1,23 +1,24 @@
-import { useContext, useEffect } from 'react';
-import { fetchRepoReadme } from '../services/github';
+import { useContext } from 'react';
 import { ResultItemProps } from '../models';
 import { DataContext } from '../context';
 
 /**
  * 
- * The ResultItem component.
+ * The ResultItem component will be use as a placeholder for search results.
  * 
  * @param props  
  * @returns 
  */
 const ResultItem = ({ repo }: ResultItemProps): JSX.Element => {
 
-    let { data, actions } = useContext(DataContext);
+    let { actions } = useContext(DataContext);
 
-    const pushReadme = () => {
-        actions.setReponame(repo.name);
-    };
-
+    /**
+     * 
+     * This function will set the repo to be fetch by the readme viewer.
+     * 
+     */
+    const pushReadme = () => { actions.setReponame(repo.name); };
 
     return (
         <div className="item" onClick={ () => pushReadme() }>

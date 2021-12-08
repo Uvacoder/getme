@@ -1,10 +1,8 @@
 import { Sidebar, Version, Viewer } from './components';
-import { createContext, useEffect, useState } from 'react';
-import { IData, Repo } from './models';
-import { fetchRepoReadme, fetchRepos } from './services/github';
+import { useEffect, useState } from 'react';
+import { Repo } from './models';
 import { DataContext, defaultData } from './context';
 import SplashScreen from './components/SplashScreen';
-
 
 /**
  * 
@@ -21,9 +19,7 @@ const App = (): JSX.Element => {
   const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
-    setTimeout(() => {
-      setLoading(false);
-    }, 5000);
+    setTimeout(() => { setLoading(false); }, 5000);
   });
 
   let data = {
@@ -47,9 +43,9 @@ const App = (): JSX.Element => {
     actions,
   };
 
-  if (loading) return <SplashScreen />;
-
-  return (
+  return loading ?
+  <SplashScreen /> :
+  (
     <DataContext.Provider value={ _defaultData }>
       <Version />
       <div className="app">

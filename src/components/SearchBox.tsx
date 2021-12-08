@@ -3,7 +3,7 @@ import { Button } from '.';
 import { DataContext } from '../context';
 import { SearchBoxConfig } from '../models';
 
-let searchBoxConfig: SearchBoxConfig = {
+const searchBoxConfig: SearchBoxConfig = {
     className:   "searchbox",
     type:        "text",
     required:    true,
@@ -12,7 +12,7 @@ let searchBoxConfig: SearchBoxConfig = {
 
 /**
  * 
- * The SearhBox component.
+ * The SearhBox component to search for GitHub user.
  * 
  * @returns 
  * 
@@ -22,9 +22,14 @@ const SearchBox = (): JSX.Element => {
     const { actions } = useContext(DataContext);
     const inputRef = useRef<HTMLInputElement>(null);
 
-    const pushReadme = () => {
+    /**
+     * 
+     * Search for all repos related to the GitHub username.
+     * 
+     */
+    const pushRepos = () => {
         if (inputRef.current != null) {
-            actions.setUsername(inputRef.current.value);
+            actions.setUsername(inputRef.current.value.toLowerCase());
             inputRef.current.value = "";
         }
     };
@@ -32,7 +37,7 @@ const SearchBox = (): JSX.Element => {
     return (
         <div>
             <input ref={ inputRef } { ...searchBoxConfig } />
-            <Button pushReadme={ pushReadme } />
+            <Button pushRepos={ pushRepos } />
         </div>
     );
     

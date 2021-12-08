@@ -5,5 +5,18 @@ import ResultPaneProps from "./ResultPaneProps";
 import SearchBoxConfig from "./SearchBoxConfig";
 import IData from "./IData";
 import ButtonProps from "./ButtonProps";
+import WordmarkProps from "./WordmarkProps";
+import Project from "./Project";
 
-export type { Owner, Repo, ResultItemProps, ResultPaneProps , SearchBoxConfig, IData, ButtonProps }; 
+export type { 
+    Owner, 
+    Repo, 
+    ResultItemProps, 
+    ResultPaneProps , 
+    SearchBoxConfig, 
+    IData, 
+    ButtonProps ,
+    WordmarkProps,
+}; 
+
+export { Project, }

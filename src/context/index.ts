@@ -18,6 +18,7 @@ const defaultData: IData = {
         fetchRepoReadme: fetchRepoReadme,
     },
 };
+
 const DataContext = createContext<IData>(defaultData);
 
 export { DataContext, defaultData };

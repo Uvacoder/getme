@@ -1,15 +1,17 @@
-import Project from '../models/Project';
+import { Project } from '../models';
 
 /**
  * 
- * The Logo component.
+ * The Logo component of the app.
  * 
  * @returns 
  * 
  */
 const Logo = (): JSX.Element => {
 
-    return <div className="logo">{ Project.APP_NAME.split(" ").join("") }.</div>;
+    return <div className="logo">
+        { Project.APP_NAME.split(" ").join("") }.
+    </div>;
     
 };
 

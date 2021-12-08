@@ -15,6 +15,6 @@ interface IData {
         fetchRepos: Function,
         fetchRepoReadme: Function,
     },
-}
+};
 
 export default IData;

@@ -1,7 +1,5 @@
 import Repo from "./Repo";
 
-interface ResultItemProps {
-    repo: Repo,  
-};
+interface ResultItemProps { repo: Repo, };
 
 export default ResultItemProps;
