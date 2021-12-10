@@ -17,27 +17,28 @@ const ResultPane = (): JSX.Element => {
     const [loading, setLoading] = useState<boolean>(true);
 
     useEffect(() => {
-
-        (async () => {
-            actions.setRepos(await actions.fetchRepos(data.username));
-        })();
-
-        if (data.username !== null) setLoading(false);
-
-    }, [actions, data.username]);
+        if (data.search) {
+            (async () => {
+                setLoading(true);
+                let newRepos = await actions.fetchRepos(data.username);
+                actions.setRepos(newRepos);
+                setLoading(false);
+            })();
+        }
+    }, [data.username]);
 
     return (
         <div className="pane">
-            { 
+            {
                 loading ?
-                <Wordmark text="Please wait..." /> :
-                !loading && data.repos.length === 0 ?
-                <Wordmark text={`No repos found for ${ data.username }.`} /> :
-                data.repos.map((repo, idx) => <ResultItem key={ idx } repo={ repo } />)
+                    <Wordmark text="Please wait..." /> :
+                    data.repos.length === 0 ?
+                        <Wordmark text={`No repos found for ${data.username}.`} /> :
+                        data.repos.map((repo, idx) => <ResultItem key={idx} repo={repo} />)
             }
         </div>
     );
-    
+
 };
 
 export default ResultPane;
