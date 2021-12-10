@@ -4,9 +4,9 @@ import { DataContext } from '../context';
 import { SearchBoxConfig } from '../models';
 
 const searchBoxConfig: SearchBoxConfig = {
-    className:   "searchbox",
-    type:        "text",
-    required:    true,
+    className: "searchbox",
+    type: "text",
+    required: true,
     placeholder: "Search for username",
 };
 
@@ -31,16 +31,17 @@ const SearchBox = (): JSX.Element => {
         if (inputRef.current != null) {
             actions.setUsername(inputRef.current.value.toLowerCase());
             inputRef.current.value = "";
+            actions.setSearch(true);
         }
     };
 
     return (
         <div>
-            <input ref={ inputRef } { ...searchBoxConfig } />
-            <Button pushRepos={ pushRepos } />
+            <input ref={inputRef} {...searchBoxConfig} />
+            <Button pushRepos={pushRepos} />
         </div>
     );
-    
+
 };
 
 export default SearchBox;

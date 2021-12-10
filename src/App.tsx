@@ -17,6 +17,7 @@ const App = (): JSX.Element => {
   const [readme, setReadme] = useState<string>("");
   const [repos, setRepos] = useState<Repo[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
+  const [search, setSearch] = useState<boolean>(true);
 
   useEffect(() => {
     setTimeout(() => { setLoading(false); }, 5000);
@@ -26,7 +27,8 @@ const App = (): JSX.Element => {
     username,
     reponame,
     readme,
-    repos
+    repos,
+    search,
   };
 
   let actions = {
@@ -35,25 +37,26 @@ const App = (): JSX.Element => {
     setReponame,
     setReadme,
     setRepos,
+    setSearch,
   };
 
-  let _defaultData = { 
+  let _defaultData = {
     ...defaultData,
     data,
     actions,
   };
 
   return loading ?
-  <SplashScreen /> :
-  (
-    <DataContext.Provider value={ _defaultData }>
-      <Version />
-      <div className="app">
-        <Sidebar />
-        <Viewer />
-      </div>
-    </DataContext.Provider>
-  );
+    <SplashScreen /> :
+    (
+      <DataContext.Provider value={_defaultData}>
+        <Version />
+        <div className="app">
+          <Sidebar />
+          <Viewer />
+        </div>
+      </DataContext.Provider>
+    );
 
 };
 

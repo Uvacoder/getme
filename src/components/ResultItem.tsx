@@ -18,18 +18,22 @@ const ResultItem = ({ repo }: ResultItemProps): JSX.Element => {
      * This function will set the repo to be fetch by the readme viewer.
      * 
      */
-    const pushReadme = () => { actions.setReponame(repo.name); };
+    const pushReadme = () => {
+        actions.setReponame(repo.name);
+        actions.setUsername(repo.owner.login);
+        actions.setSearch(false);
+    };
 
     return (
-        <div className="item" onClick={ () => pushReadme() }>
+        <div className="item" onClick={() => pushReadme()}>
             <div className="active"></div>
             <div className="item-avatar">
-                <img src={ repo.owner.avatar_url } alt="" className="avatar" />
+                <img src={repo.owner.avatar_url} alt="" className="avatar" />
             </div>
             <div className="item-content">
-                <p className="username">{ repo.owner.login }</p>
-                <p className="reponame">{ repo.name }</p>
-                <p className="repodesc">{ repo.description }</p>
+                <p className="username">{repo.owner.login}</p>
+                <p className="reponame">{repo.name}</p>
+                <p className="repodesc">{repo.description}</p>
             </div>
         </div>
     );
