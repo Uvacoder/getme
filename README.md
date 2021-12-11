@@ -1,6 +1,6 @@
-# [Getme](http://getme-test.herokuapp.com)
+# [Getme](https://getme-84c4f.web.app)
 
-###### A web application to search GitHub projects. Vist [http://getme-test.herokuapp.com](http://getme-test.herokuapp.com)!
+###### A web application to search GitHub projects. Vist [https://getme-84c4f.web.app](https://getme-84c4f.web.app)!
 
 ![Getme screenshot](./public/screenshot.png "Getme Web App")
 
@@ -15,7 +15,7 @@
 1. React was used to develop user interfaces and the frontend.
 2. SCSS was used to develop the stylesheets of every UI and converge into one.
 3. GitHUB RESTful API via Octokit was used to fetch GitHub-related data.
-4. Extensions such as `@varandas/fetch-readme`, `react-markdown`, and `react-spinner` were used to develope other interfaces.
+4. Extensions such as `@varandas/fetch-readme`, `react-markdown`, and `react-spinner` were used to develop other interfaces.
 5. TypeScript was used as an extension with JS to minimize production bugs.
 6. Heroku was used to deploy the production app.
 
