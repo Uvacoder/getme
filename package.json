@@ -1,7 +1,6 @@
 {
   "name": "getme",
   "version": "0.1.0",
-  "homepage": "http://vrfdivino.github.io/getme",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
